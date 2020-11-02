@@ -196,7 +196,7 @@ class PreTrainingModel(TabModel):
         self.network.eval()
 
         # compute feature importance once the best model is defined
-        self._compute_feature_importances(train_dataloader)
+        #self._compute_feature_importances(train_dataloader)
 
     def predict(self, X):
         """
