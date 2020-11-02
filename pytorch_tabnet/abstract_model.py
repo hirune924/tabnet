@@ -83,6 +83,7 @@ class TabModel(BaseEstimator):
         drop_last=False,
         callbacks=None,
         pin_memory=True,
+        pretrain=None,
     ):
         """Train a neural network stored in self.network
         Using train_dataloader for training data and
@@ -161,6 +162,8 @@ class TabModel(BaseEstimator):
         )
 
         self._set_network()
+        if pretrain is not None:
+            self.network.load_state_dict(torch.load(pretrain), strict=false)
         self._set_metrics(eval_metric, eval_names)
         self._set_optimizer()
         self._set_callbacks(callbacks)
