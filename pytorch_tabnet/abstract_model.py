@@ -163,7 +163,8 @@ class TabModel(BaseEstimator):
 
         self._set_network()
         if pretrain is not None:
-            self.network.load_state_dict(torch.load(pretrain), strict=False)
+            res_tmp = self.network.load_state_dict(torch.load(pretrain), strict=False)
+            print(res_tmp)
         self._set_metrics(eval_metric, eval_names)
         self._set_optimizer()
         self._set_callbacks(callbacks)
