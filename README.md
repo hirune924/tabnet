@@ -48,7 +48,7 @@ If you wan to use it locally within a docker container:
 TabNet is now scikit-compatible, training a TabNetClassifier or TabNetRegressor is really easy.
 
 ```
-from pytorch_tabnet.tab_model import TabNetClassifier, TabNetRegressor
+from pytorch_tabnet_custom.tab_model import TabNetClassifier, TabNetRegressor
 
 clf = TabNetClassifier()  #TabNetRegressor()
 clf.fit(
@@ -61,7 +61,7 @@ preds = clf.predict(X_test)
 or for TabNetMultiTaskClassifier :
 
 ```
-from pytorch_tabnet.multitask import TabNetMultiTaskClassifier
+from pytorch_tabnet_custom.multitask import TabNetMultiTaskClassifier
 clf = TabNetMultiTaskClassifier()
 clf.fit(
   X_train, Y_train,
@@ -73,7 +73,7 @@ preds = clf.predict(X_test)
 ### Custom early_stopping_metrics
 
 ```
-from pytorch_tabnet.metrics import Metric
+from pytorch_tabnet_custom.metrics import Metric
 from sklearn.metrics import roc_auc_score
 
 class Gini(Metric):

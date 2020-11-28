@@ -5,8 +5,8 @@ from torch.nn.utils import clip_grad_norm_
 import numpy as np
 from scipy.sparse import csc_matrix
 from abc import abstractmethod
-from pytorch_tabnet import tab_network
-from pytorch_tabnet.utils import (
+from pytorch_tabnet_custom import tab_network
+from pytorch_tabnet_custom.utils import (
     PredictDataset,
     create_explain_matrix,
     validate_eval_set,
@@ -14,13 +14,13 @@ from pytorch_tabnet.utils import (
     check_nans,
     define_device,
 )
-from pytorch_tabnet.callbacks import (
+from pytorch_tabnet_custom.callbacks import (
     CallbackContainer,
     History,
     EarlyStopping,
     LRSchedulerCallback,
 )
-from pytorch_tabnet.metrics import MetricContainer, check_metrics
+from pytorch_tabnet_custom.metrics import MetricContainer, check_metrics
 from torch.utils.data import DataLoader
 import io
 import json
@@ -28,7 +28,7 @@ from pathlib import Path
 import shutil
 import zipfile
 
-from pytorch_tabnet.abstract_model import TabModel
+from pytorch_tabnet_custom.abstract_model import TabModel
 
 
 @dataclass
