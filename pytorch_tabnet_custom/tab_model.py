@@ -106,9 +106,9 @@ class TabNetClassifier(TabModel):
         return res
 
 
-class TabNetRegressor(TabModel):
+class TabNetRegressorCustom(TabModel):
     def __post_init__(self):
-        super(TabNetRegressor, self).__post_init__()
+        super(TabNetRegressorCustom, self).__post_init__()
         self._task = 'regression'
         self._default_loss = torch.nn.functional.mse_loss
         self._default_metric = 'mse'
